@@ -6,7 +6,7 @@ import java.util.Random;
  * @author Gunthee
  */
 public class GuntheeGame extends NumberGame {
-	private int secretNumber;
+	private int secret;
 	private int upperBound;
 	private int counter;
 	
@@ -14,19 +14,19 @@ public class GuntheeGame extends NumberGame {
 		long seed = System.nanoTime();
 		Random rand = new Random(seed);
 		this.upperBound = upperBound;
-		this.secretNumber = rand.nextInt(this.upperBound)+1;
+		this.secret = rand.nextInt(this.upperBound)+1;
 		this.counter = 0;
 		System.out.println("I'm thinking of a number between 1 and "+ this.upperBound);
 	}
 	
 	public boolean guess(int number) {
 		this.counter += 1;
-		if (number == this.secretNumber) {
-			System.out.println("The secret number is "+ this.secretNumber);
+		if (number == this.secret) {
+			System.out.println("The secret number is "+ this.secret);
 			return true;
 		}
-		else if (number < this.secretNumber) System.out.println("too small");
-		else if (number > this.secretNumber) System.out.println("too large");
+		else if (number < this.secret) System.out.println("too small");
+		else if (number > this.secret) System.out.println("too large");
 		return false;
 	}
 	
