@@ -22,7 +22,8 @@ public class GuntheeGame extends NumberGame {
 		long seed = System.nanoTime();
 		Random rand = new Random(seed);
 		this.upperBound = upperBound;
-		this.secret = rand.nextInt(this.upperBound)+1;
+		this.secret = 100;
+//		this.secret = rand.nextInt(this.upperBound)+1;
 		this.counter = 0;
 		System.out.println("I'm thinking of a number between 1 and "+ this.upperBound);
 	}

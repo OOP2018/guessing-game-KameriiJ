@@ -10,8 +10,9 @@ public class Main {
 		GuntheeGame game = new GuntheeGame(upperBound);
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
-		
 		System.out.println("\nplay() returned "+solution);
 		
+		GameSolver solver = new GameSolver();
+		System.out.println(solver.play(game));
 	}
 }

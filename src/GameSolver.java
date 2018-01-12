@@ -3,6 +3,10 @@
  * @author tawewatmongkol
  */
 public class GameSolver {
+	
+	public GameSolver() {
+		
+	}
 	/**
 	 * Play a Number Game and return the solution.
 	 * The NumberGame object must provide messages (getMessage)
@@ -14,9 +18,19 @@ public class GameSolver {
 	 * @return the solution of NumberGame
 	 */
 	public int play(NumberGame game) {
-		int x = 1;
-		for(x = 1;; x++) {
-			if(game.guess(x)) return x;
+		int upperBound = game.getUpperBound();
+		int num = upperBound;
+		int pow = 1;
+		while(true) {
+			int divisor = (int)Math.pow(2, pow);
+			if (game.guess(num)) return num;
+			if (game.getMessage().equals("too small")) {
+				num += upperBound/divisor;
+			}
+			if(game.getMessage().equals("too large")) {
+				num -= upperBound/divisor;
+			}
+			pow++;
 		}
 	}
 }
