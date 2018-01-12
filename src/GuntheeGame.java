@@ -22,11 +22,11 @@ public class GuntheeGame extends NumberGame {
 	public boolean guess(int number) {
 		this.counter += 1;
 		if (number == this.secret) {
-			System.out.println("The secret number is "+ this.secret);
+			this.setMessage("The secret number is "+ this.secret);
 			return true;
 		}
-		else if (number < this.secret) System.out.println("too small");
-		else if (number > this.secret) System.out.println("too large");
+		else if (number < this.secret) this.setMessage("too small");
+		else if (number > this.secret) this.setMessage("too large");
 		return false;
 	}
 	

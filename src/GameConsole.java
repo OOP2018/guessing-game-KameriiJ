@@ -22,8 +22,9 @@ public class GameConsole {
 			System.out.print("Your answer? ");
 			guess = console.nextInt();
 			correct = game.guess(guess);
+			System.out.println( game.getMessage() );
 		}while(!correct);
-		System.out.println("You make " + game.getCount() + "guesses.");
+		System.out.println("You make " + game.getCount() + " guesses.");
 		return guess;
 	}
 	
