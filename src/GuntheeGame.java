@@ -32,6 +32,7 @@ public class GuntheeGame extends NumberGame {
      * @param answer is the user's answer, as an integer.
      * @return true if correct, false otherwise
      */
+	@Override
 	public boolean guess(int number) {
 		this.counter += 1;
 		if (number == this.secret) {
@@ -43,14 +44,17 @@ public class GuntheeGame extends NumberGame {
 		return false;
 	}
 	
+	@Override
 	public int getCount() {
 		return counter;
 	}
 	
+	@Override
 	public int getUpperBound() {
 		return this.upperBound;
 	}
 	
+	@Override
 	public String toString() {
 		return String.format("Guess a secret number between 1 and %d", this.upperBound);
 	}
