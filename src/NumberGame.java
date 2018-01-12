@@ -13,7 +13,7 @@ public class NumberGame {
     /** Initialize a new default game. */
     public NumberGame() {
 		// initialize your game.
-    	message = "";
+    	message = "Please guess the number";
     }
    
     /**
@@ -62,4 +62,8 @@ public class NumberGame {
     public String toString() {
 		return "You should override this method for your game";
     }
+	
+	public int getCount() {
+		return 0;
+	}
 }
