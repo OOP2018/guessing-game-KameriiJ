@@ -13,6 +13,6 @@ public class Main {
 		System.out.println("\nplay() returned "+solution);
 		
 		GameSolver solver = new GameSolver();
-		System.out.println(solver.play(game));
+		System.out.println("Solver: "+ solver.play(game));
 	}
 }

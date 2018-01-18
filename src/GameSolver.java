@@ -18,13 +18,10 @@ public class GameSolver {
 		int upperBound = game.getUpperBound();
 		int num = upperBound;
 		int pow = 1;
-		while(true) {
+		while(!game.guess(num)) {
 			int divisor = (int)Math.pow(2, pow);
 			if(divisor > upperBound) divisor = upperBound;
-			if (game.guess(num)) {
-				if(num > upperBound) System.out.println("The secret number is bigger than upperbound.");
-				return num;
-			}
+			
 			if (game.getMessage().equals("too small")) {
 				num += upperBound/divisor;
 			}
@@ -33,5 +30,7 @@ public class GameSolver {
 			}
 			pow++;
 		}
+		if(num > upperBound) System.out.println("The secret number is bigger than upperbound.");
+		return num;
 	}
 }
