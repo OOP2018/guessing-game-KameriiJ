@@ -1,12 +1,9 @@
 /**
  * Automatically find the secret to any NumberGame.
- * @author tawewatmongkol
+ * @author Gunthee Tawewatmomgkol
  */
 public class GameSolver {
 	
-	public GameSolver() {
-		
-	}
 	/**
 	 * Play a Number Game and return the solution.
 	 * The NumberGame object must provide messages (getMessage)
@@ -23,7 +20,11 @@ public class GameSolver {
 		int pow = 1;
 		while(true) {
 			int divisor = (int)Math.pow(2, pow);
-			if (game.guess(num)) return num;
+			if(divisor > upperBound) divisor = upperBound;
+			if (game.guess(num)) {
+				if(num > upperBound) System.out.println("The secret number is bigger than upperbound.");
+				return num;
+			}
 			if (game.getMessage().equals("too small")) {
 				num += upperBound/divisor;
 			}

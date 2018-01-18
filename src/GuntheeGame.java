@@ -7,7 +7,7 @@ import java.util.Random;
  * If guess number is too large, the message will set "too large".
  * When player guess the correct number, it'll tell you count of player's guesses.
  * 
- * @author Gunthee
+ * @author Gunthee Tawewatmomgkol
  */
 public class GuntheeGame extends NumberGame {
 	private int secret;
