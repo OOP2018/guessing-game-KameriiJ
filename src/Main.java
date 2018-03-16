@@ -1,18 +1,32 @@
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  * A main class for the GuessingGame.
  * It is responsible for creating objects, 
  * connecting objects, and running the game UI.
  */
-public class Main {
+public class Main extends Application{
+	
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			Parent root = (Parent)FXMLLoader.load(getClass().getResource("GuessingUI.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.sizeToScene();
+			primaryStage.show();
+		}catch(Exception e) {
+			System.out.println("Banana");
+			e.printStackTrace();
+			return;
+		}
+	}
+	
 	public static void main(String[] args) {
-		// upper limit for secret number in guessing game
-		int upperBound = 100;
-		GuntheeGame game = new GuntheeGame(upperBound);
-		GameConsole ui = new GameConsole( );
-		int solution = ui.play( game );
-		System.out.println("\nplay() returned "+solution);
-		
-		GameSolver solver = new GameSolver();
-		System.out.println("Solver: "+ solver.play(game));
+		launch(args);
 	}
 }

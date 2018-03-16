@@ -22,10 +22,10 @@ public class GameSolver {
 			int divisor = (int)Math.pow(2, pow);
 			if(divisor > upperBound) divisor = upperBound;
 			
-			if (game.getMessage().equals("too small")) {
+			if (game.getMessage().toLowerCase().contains("too small")) {
 				num += upperBound/divisor;
 			}
-			if(game.getMessage().equals("too large")) {
+			if(game.getMessage().toLowerCase().contains("too large")) {
 				num -= upperBound/divisor;
 			}
 			pow++;
