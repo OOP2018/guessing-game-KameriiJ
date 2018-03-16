@@ -43,5 +43,6 @@ public class GuessingController {
 		GameSolver solver = new GameSolver();
 		int number = solver.play(myGame);
 		label.setText("The secret number is " + number);
+		myGame = new GuntheeGame(100);
 	}
 }
