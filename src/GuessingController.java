@@ -21,11 +21,11 @@ public class GuessingController {
 				label.setText("Please input a number between 1 to 100.");
 			}
 			else {
-				myGame.guess(number);
-				if (myGame.getMessage().contains("The secret number is")) {
+				if (myGame.guess(number)) {
 					label.setText("You win!");
 					textfield.clear();
 					myGame = new GuntheeGame(100);
+					view2.setCounter(myGame);
 				} else {
 					label.setText(myGame.getMessage());
 				}
@@ -47,5 +47,6 @@ public class GuessingController {
 		int number = solver.play(myGame);
 		label.setText("The secret number is " + number);
 		myGame = new GuntheeGame(100);
+		view2.setCounter(myGame);
 	}
 }
