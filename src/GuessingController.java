@@ -10,6 +10,7 @@ public class GuessingController {
 	
 	private String defaultStyle = "";
 	private GuntheeGame myGame = new GuntheeGame(100);
+	private CounterView view2 = new CounterView(myGame);
 
 	public void guess() {
 		try {
@@ -32,6 +33,8 @@ public class GuessingController {
 			defaultStyle = textfield.getStyle();
 			textfield.requestFocus();
 			textfield.clear();
+			myGame.addObserver(view2);
+			view2.run();
 		} catch (Exception ex) {
 			textfield.setStyle("-fx-background-color: red");
 			textfield.clear();
