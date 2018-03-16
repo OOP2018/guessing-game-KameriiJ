@@ -19,19 +19,23 @@ public class GuessingController {
 			if (number > 100) {
 				label.setText("Please input a number between 1 to 100.");
 			}
-			myGame.guess(number);
-			if (myGame.getMessage().contains("The secret number is")) {
-				label.setText("You win!");
-				textfield.clear();
-				myGame = new GuntheeGame(100);
-			} else {
-				label.setText(myGame.getMessage());
+			else {
+				myGame.guess(number);
+				if (myGame.getMessage().contains("The secret number is")) {
+					label.setText("You win!");
+					textfield.clear();
+					myGame = new GuntheeGame(100);
+				} else {
+					label.setText(myGame.getMessage());
+				}
 			}
 			defaultStyle = textfield.getStyle();
 			textfield.requestFocus();
 			textfield.clear();
 		} catch (Exception ex) {
 			textfield.setStyle("-fx-background-color: red");
+			textfield.clear();
+			label.setText("Please input a number between 1 to 100.");
 		}
 	}
 
