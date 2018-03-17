@@ -1,7 +1,11 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
-
+/**
+ * Controller for the guessing game and the Counter.
+ * 
+ * @author Gunthee Tawewatmongkol
+ */
 public class GuessingController {
 	@FXML
 	TextField textfield;
@@ -9,9 +13,12 @@ public class GuessingController {
 	Labeled label;
 	
 	private String defaultStyle = "";
-	private GuntheeGame myGame = new GuntheeGame(100);
+	private NumberGame myGame = new GuntheeGame(100);
 	private CounterView view2 = new CounterView(myGame);
-
+	
+	/**
+     * Show the result and amount of guessing.
+     */
 	public void guess() {
 		try {
 			textfield.setStyle(defaultStyle);
@@ -42,6 +49,9 @@ public class GuessingController {
 		}
 	}
 
+	/**
+	 * Play a Number Game and show the solution.
+	 */
 	public void giveUp() {
 		GameSolver solver = new GameSolver();
 		int number = solver.play(myGame);

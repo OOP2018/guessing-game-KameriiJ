@@ -20,7 +20,7 @@ public class CounterView extends Stage implements java.util.Observer {
 	/** the stage (top-level window) for showing scene */
 	private Stage stage;
 	/** a counter to show value of */
-	private GuntheeGame counter;
+	private NumberGame counter;
 	/** the label that shows the counter value. */
 	private Label label;
 	
@@ -28,7 +28,7 @@ public class CounterView extends Stage implements java.util.Observer {
 	 * Initialize a CounterView, which shows value of a counter.
 	 * @param counter the Counter to show.
 	 */
-	public CounterView(GuntheeGame counter) {
+	public CounterView(NumberGame counter) {
 		this.counter = counter;
 		initComponents();
 	}
@@ -71,7 +71,7 @@ public class CounterView extends Stage implements java.util.Observer {
 		displayCount();
 	}
 	
-	public void setCounter(GuntheeGame counter) {
+	public void setCounter(NumberGame counter) {
 		this.counter = counter;
 	}
 }
